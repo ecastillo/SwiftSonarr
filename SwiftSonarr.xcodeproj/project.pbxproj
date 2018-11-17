@@ -10,6 +10,14 @@
 		07AC2F752198A22300138D75 /* SwiftSonarr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AC2F6B2198A22300138D75 /* SwiftSonarr.framework */; };
 		07AC2F7A2198A22300138D75 /* SwiftSonarrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F792198A22300138D75 /* SwiftSonarrTests.swift */; };
 		07AC2F7C2198A22300138D75 /* SwiftSonarr.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AC2F6E2198A22300138D75 /* SwiftSonarr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07AC2F862198F2B800138D75 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F852198F2B800138D75 /* HttpStatus.swift */; };
+		07AC2F882198F31700138D75 /* SystemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F872198F31700138D75 /* SystemStatus.swift */; };
+		07AC2F8A2198F33600138D75 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F892198F33600138D75 /* HttpMethod.swift */; };
+		07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */; };
+		07AC2F8E2198F37A00138D75 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F8D2198F37A00138D75 /* Result.swift */; };
+		07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F8F2198F3B200138D75 /* SonarrClient.swift */; };
+		07AC2F972198F90E00138D75 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F962198F90E00138D75 /* Tag.swift */; };
+		07AC2F9A219BC0C800138D75 /* Sonarr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F99219BC0C800138D75 /* Sonarr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,15 @@
 		07AC2F742198A22300138D75 /* SwiftSonarrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSonarrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC2F792198A22300138D75 /* SwiftSonarrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSonarrTests.swift; sourceTree = "<group>"; };
 		07AC2F7B2198A22300138D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07AC2F852198F2B800138D75 /* HttpStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
+		07AC2F872198F31700138D75 /* SystemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStatus.swift; sourceTree = "<group>"; };
+		07AC2F892198F33600138D75 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarrEndpoint.swift; sourceTree = "<group>"; };
+		07AC2F8D2198F37A00138D75 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		07AC2F8F2198F3B200138D75 /* SonarrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarrClient.swift; sourceTree = "<group>"; };
+		07AC2F952198F53000138D75 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		07AC2F962198F90E00138D75 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		07AC2F99219BC0C800138D75 /* Sonarr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sonarr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +70,7 @@
 		07AC2F612198A22300138D75 = {
 			isa = PBXGroup;
 			children = (
+				07AC2F952198F53000138D75 /* Playground.playground */,
 				07AC2F6D2198A22300138D75 /* SwiftSonarr */,
 				07AC2F782198A22300138D75 /* SwiftSonarrTests */,
 				07AC2F6C2198A22300138D75 /* Products */,
@@ -73,6 +91,13 @@
 			children = (
 				07AC2F6E2198A22300138D75 /* SwiftSonarr.h */,
 				07AC2F6F2198A22300138D75 /* Info.plist */,
+				07AC2F99219BC0C800138D75 /* Sonarr.swift */,
+				07AC2F852198F2B800138D75 /* HttpStatus.swift */,
+				07AC2F892198F33600138D75 /* HttpMethod.swift */,
+				07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */,
+				07AC2F8F2198F3B200138D75 /* SonarrClient.swift */,
+				07AC2F8D2198F37A00138D75 /* Result.swift */,
+				07AC2F9B219BC79500138D75 /* Endpoints */,
 			);
 			path = SwiftSonarr;
 			sourceTree = "<group>";
@@ -84,6 +109,15 @@
 				07AC2F7B2198A22300138D75 /* Info.plist */,
 			);
 			path = SwiftSonarrTests;
+			sourceTree = "<group>";
+		};
+		07AC2F9B219BC79500138D75 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				07AC2F872198F31700138D75 /* SystemStatus.swift */,
+				07AC2F962198F90E00138D75 /* Tag.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +182,7 @@
 				TargetAttributes = {
 					07AC2F6A2198A22300138D75 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					07AC2F732198A22300138D75 = {
 						CreatedOnToolsVersion = 10.0;
@@ -194,6 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AC2F882198F31700138D75 /* SystemStatus.swift in Sources */,
+				07AC2F8E2198F37A00138D75 /* Result.swift in Sources */,
+				07AC2F9A219BC0C800138D75 /* Sonarr.swift in Sources */,
+				07AC2F8A2198F33600138D75 /* HttpMethod.swift in Sources */,
+				07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */,
+				07AC2F972198F90E00138D75 /* Tag.swift in Sources */,
+				07AC2F862198F2B800138D75 /* HttpStatus.swift in Sources */,
+				07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +384,7 @@
 		07AC2F802198A22300138D75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericcastillo.SwiftSonarr;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +411,7 @@
 		07AC2F812198A22300138D75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +437,7 @@
 		07AC2F832198A22300138D75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YRPW3NL9P9;
 				INFOPLIST_FILE = SwiftSonarrTests/Info.plist;
@@ -409,6 +456,7 @@
 		07AC2F842198A22300138D75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YRPW3NL9P9;
 				INFOPLIST_FILE = SwiftSonarrTests/Info.plist;
