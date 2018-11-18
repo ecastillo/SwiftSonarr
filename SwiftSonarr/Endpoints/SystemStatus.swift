@@ -34,7 +34,7 @@ public struct SystemStatus: Decodable {
     
 }
 
-/// Models the SystemStatus endpoint from the Sonarr API.
+/// Models the System Status endpoint from the Sonarr API.
 enum SystemStatusEndpoint: SonarrEndpoint {
     
     case systemStatus()
