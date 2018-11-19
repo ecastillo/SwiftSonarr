@@ -12,30 +12,56 @@ import Foundation
 typealias AlamofireJSONCompletionHandler = (Result<Any>) -> Void
 
 /// Used to connect to any JSON API that is modeled by a SonarrEnspoint
-enum SonarrClient {
+class SonarrClient {
     
     static func makeAPICall(to endPoint: SonarrEndpoint, completionHandler:@escaping AlamofireJSONCompletionHandler) {
-        guard let url = URL(string: endPoint.url) else {
+
+        guard var requestUrl = URLComponents(string: endPoint.url) else {
             print("invalid URL")
             let err = NSError(domain: "", code: -1, userInfo: nil)
             completionHandler(Result.failure(err))
             return
         }
-        var request = URLRequest(url: url)
+        
+        var request: URLRequest
+        
+        switch endPoint.httpMethod {
+        case .get:
+            if let params = endPoint.parameters {
+                var queryItems = [URLQueryItem]()
+                for param in params {
+                    queryItems.append(URLQueryItem(name: param.key, value: String(describing: param.value)))
+                    print("found a param: \(param.key)")
+                }
+                requestUrl.queryItems = queryItems
+            }
+            print(requestUrl.queryItems?.count)
+            request = URLRequest(url: requestUrl.url!)
+        default:
+            request = URLRequest(url: requestUrl.url!)
+            if let params = endPoint.parameters {
+                guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
+                    print("json serialization failed")
+                    let err = NSError(domain: "", code: -1, userInfo: nil)
+                    completionHandler(Result.failure(err))
+                    return
+                }
+                print("params: \(params)")
+                request.httpBody = httpBody
+            }
+        }
+        
         request.httpMethod = endPoint.httpMethod.rawValue
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("840696c003ef449e923ee65d52b85978", forHTTPHeaderField: "X-Api-Key")
-        if let params = endPoint.parameters {
-            guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
-                print("json serialization failed")
-                let err = NSError(domain: "", code: -1, userInfo: nil)
-                completionHandler(Result.failure(err))
-                return
-            }
-            request.httpBody = httpBody
-        }
+        
+        
+        
+        
+        print("request: \(request)")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print("meeeee")
             if let response = response {
                 let httpUrlResponse = response as! HTTPURLResponse
                 print(httpUrlResponse.statusCode)

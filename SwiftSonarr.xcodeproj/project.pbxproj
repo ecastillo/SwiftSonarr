@@ -18,6 +18,10 @@
 		07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F8F2198F3B200138D75 /* SonarrClient.swift */; };
 		07AC2F972198F90E00138D75 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F962198F90E00138D75 /* Tag.swift */; };
 		07AC2F9A219BC0C800138D75 /* Sonarr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F99219BC0C800138D75 /* Sonarr.swift */; };
+		07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F9C21A2133100138D75 /* WantedMissing.swift */; };
+		07AC2F9F21A2141500138D75 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F9E21A2141500138D75 /* Series.swift */; };
+		07AC2FA121A2142600138D75 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2FA021A2142600138D75 /* Episode.swift */; };
+		07E4616B21A33CA500EB87F5 /* JSON+DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		07AC2F952198F53000138D75 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		07AC2F962198F90E00138D75 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		07AC2F99219BC0C800138D75 /* Sonarr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sonarr.swift; sourceTree = "<group>"; };
+		07AC2F9C21A2133100138D75 /* WantedMissing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedMissing.swift; sourceTree = "<group>"; };
+		07AC2F9E21A2141500138D75 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		07AC2FA021A2142600138D75 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+DateFormats.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 				07AC2F8F2198F3B200138D75 /* SonarrClient.swift */,
 				07AC2F8D2198F37A00138D75 /* Result.swift */,
 				07AC2F9B219BC79500138D75 /* Endpoints */,
+				07E4616C21A33CAA00EB87F5 /* Extensions */,
 			);
 			path = SwiftSonarr;
 			sourceTree = "<group>";
@@ -116,8 +125,19 @@
 			children = (
 				07AC2F872198F31700138D75 /* SystemStatus.swift */,
 				07AC2F962198F90E00138D75 /* Tag.swift */,
+				07AC2F9E21A2141500138D75 /* Series.swift */,
+				07AC2FA021A2142600138D75 /* Episode.swift */,
+				07AC2F9C21A2133100138D75 /* WantedMissing.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		07E4616C21A33CAA00EB87F5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,13 +249,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E4616B21A33CA500EB87F5 /* JSON+DateFormats.swift in Sources */,
 				07AC2F882198F31700138D75 /* SystemStatus.swift in Sources */,
 				07AC2F8E2198F37A00138D75 /* Result.swift in Sources */,
 				07AC2F9A219BC0C800138D75 /* Sonarr.swift in Sources */,
 				07AC2F8A2198F33600138D75 /* HttpMethod.swift in Sources */,
+				07AC2F9F21A2141500138D75 /* Series.swift in Sources */,
+				07AC2FA121A2142600138D75 /* Episode.swift in Sources */,
 				07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */,
 				07AC2F972198F90E00138D75 /* Tag.swift in Sources */,
 				07AC2F862198F2B800138D75 /* HttpStatus.swift in Sources */,
+				07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */,
 				07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

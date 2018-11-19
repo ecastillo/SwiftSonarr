@@ -36,8 +36,9 @@ public struct Sonarr {
     }
     
     static func handleSuccessfulAPICall<T: Decodable>(for data: Any, expectedResultType: T.Type, completionHandler: (Result<Any>) -> Void) {
-        guard let decodedJson = try? JSONDecoder().decode(expectedResultType, from: data as! Data) else {
-            //guard let json = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as! [String : Any] else {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .sonarr
+        guard let decodedJson = try? jsonDecoder.decode(expectedResultType, from: data as! Data) else {
             let error = HttpStatus.badJSON
             handleFailedAPICall(for: error, completionHandler: completionHandler)
             return

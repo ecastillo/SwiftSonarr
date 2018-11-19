@@ -32,3 +32,27 @@ class SwiftSonarrTests: XCTestCase {
     }
 
 }
+
+
+
+
+//private final class MockSonarr: Sonarr {
+//    var getTagResult: Result<Tag>?
+//
+//    @objc override func tag(id: Int, _ completionHandler: @escaping (Result<Tag>) -> Void) {
+//        completionHandler(getTagResult!)
+//    }
+//
+//    func testSuccess() {
+//        let appServerClient = MockAppServerClient()
+//        appServerClient.getFriendsResult = .success(payload: [])
+//
+//        let viewModel = FriendsTableViewViewModel(appServerClient: appServerClient)
+//        viewModel.getFriends()
+//
+//        guard case .some(.empty) = viewModel.friendCells.value.first else {
+//            XCTFail()
+//            return
+//        }
+//    }
+//}
