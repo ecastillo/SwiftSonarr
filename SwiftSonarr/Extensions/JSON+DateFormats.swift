@@ -20,6 +20,11 @@ extension Formatter {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssX"
         return formatter
     }()
+    static let sonarrDateTimeLong: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        return formatter
+    }()
 }
 
 extension JSONDecoder.DateDecodingStrategy {
@@ -30,6 +35,8 @@ extension JSONDecoder.DateDecodingStrategy {
         if let date = Formatter.sonarrDate.date(from: string) {
             return date
         } else if let date = Formatter.sonarrDateTime.date(from: string) {
+            return date
+        } else if let date = Formatter.sonarrDateTimeLong.date(from: string) {
             return date
         }
         throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)")

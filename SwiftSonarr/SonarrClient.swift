@@ -18,7 +18,8 @@ class SonarrClient {
 
         guard var requestUrl = URLComponents(string: endPoint.url) else {
             print("invalid URL")
-            let err = NSError(domain: "", code: -1, userInfo: nil)
+            //let err = NSError(domain: "", code: -1, userInfo: nil)
+            let err = SSError(code: SSErrorCode(rawValue: 400)!, requestUrl: endPoint.url, message: nil)
             completionHandler(Result.failure(err))
             return
         }
@@ -43,7 +44,7 @@ class SonarrClient {
                 guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
                     print("json serialization failed")
                     let err = NSError(domain: "", code: -1, userInfo: nil)
-                    completionHandler(Result.failure(err))
+                    //completionHandler(Result.failure(err))
                     return
                 }
                 print("params: \(params)")
@@ -73,12 +74,14 @@ class SonarrClient {
                         if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any] {
                             userInfo = json
                         }
-                        let err = NSError(domain: "", code: httpUrlResponse.statusCode, userInfo: userInfo)
+                        //let err = NSError(domain: "", code: httpUrlResponse.statusCode, userInfo: userInfo)
+                        let err = SSError(code: SSErrorCode(rawValue: httpUrlResponse.statusCode)!, requestUrl: request.url?.absoluteString, message: userInfo["message"] as? String)
                         completionHandler(Result.failure(err))
                     }
                 }
             } else {
-                completionHandler(Result.failure(error!))
+                let err = SSError(code: SSErrorCode.init(400), requestUrl: request.url?.absoluteString, message: nil)
+                completionHandler(Result.failure(err))
             }
         }.resume()
     }

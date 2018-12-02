@@ -19,8 +19,9 @@ public struct Series: Codable {
     public let sizeOnDisk: Int?
     public let status: String?
     public let overview: String?
-    public let previousAiring: Date?
+    //public let previousAiring: Date?      Doesn't exist???
     public let network: String?
+    // TODO: Custom decode/encode for TimeInterval
     public let airTime: TimeInterval?
     public let images: [Image]?
     public let seasons: [Season]?
@@ -35,10 +36,10 @@ public struct Series: Codable {
     public let tvRageId: Int?
     public let tvMazeId: Int?
     public let firstAired: Date?
-    public let lastInfoSync: Date?      // "2018-11-19T15:18:23.3144168Z"
+    public let lastInfoSync: Date?
     public let seriesType: SeriesType?
     public let cleanTitle: String?
-    public let imdbId: Int?
+    public let imdbId: String?
     public let titleSlug: String?
     public let certification: String?
     public let genres: [String]?
@@ -82,5 +83,39 @@ public struct Series: Codable {
     public struct Rating: Codable {
         public var votes: Int?
         public var value: Double?
+    }
+}
+
+
+/// Models the Series endpoint from the Sonarr API.
+enum SeriesEndpoint: SonarrEndpoint {
+    
+    case series()
+    
+    // MARK: - SonarrEndpoint conforming methods
+    
+    func provideValues() -> (path: String, httpMethod: HTTPMethod, parameters:[String:Any]?) {
+        switch self {
+        case .series():
+            return (path: "/series", httpMethod: .get, parameters: nil)
+        }
+    }
+}
+
+public extension Sonarr {
+    
+    public static func series(_ completionHandler: @escaping (Result<[Series]>) -> Void) {
+        print("but we are here")
+        SonarrClient.makeAPICall(to: SeriesEndpoint.series()) { (result) in
+            print("we got here")
+            self.handle(result: result, expectedResultType: [Series].self) { result in
+                switch result {
+                case .success(let series):
+                    completionHandler(Result.success(series as! [Series]))
+                case .failure(let error):
+                    completionHandler(Result.failure(error))
+                }
+            }
+        }
     }
 }

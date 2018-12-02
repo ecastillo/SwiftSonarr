@@ -24,4 +24,5 @@ public struct Episode: Codable {
     public var tvDbEpisodeId: Int?
     public var absoluteEpisodeNumber: Int?
     public var id: Int?
+    public var series: Series?
 }

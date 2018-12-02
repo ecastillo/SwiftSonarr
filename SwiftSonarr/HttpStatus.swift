@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum HttpStatus: Int, Error {
+public enum SSErrorCode: Int, CustomStringConvertible {
     case `continue`                         = 100
     case switchingProtocols                 = 101
     case processing                         = 102
@@ -82,17 +82,21 @@ public enum HttpStatus: Int, Error {
     case networkReadTimeoutError            = 598
     case networkConnectTimeoutError         = 599
     case unknown                            = -1
-    case badJSON
+    case badJSON                            = 1
 
     init(_ statusCode: Int) {
-        self = HttpStatus(rawValue: statusCode) ?? .unknown
+        self = SSErrorCode(rawValue: statusCode) ?? .unknown
     }
     
-    public var _code: Int {
+    var code: Int {
         return self.rawValue
     }
     
-    var description: String {
+    public var description: String {
+        return String(self.rawValue)
+    }
+    
+    public var errorDescription: String {
         switch self {
         case .continue:
             return "Continue"
@@ -239,20 +243,28 @@ public enum HttpStatus: Int, Error {
         case .networkConnectTimeoutError:
             return "Network connect timeout error"
         case .badJSON:
-            return "Bad JSON Received"
+            return "The data from the server came back in a way we couldn't use"
         default:
-            return "HTTP Error - Unknown"
+            return "Error - Unknown"
         }
     }
 }
 
-extension HttpStatus: LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case .badJSON:
-            return NSLocalizedString("The data from the server came back in a way we couldn't use", comment: "")
-        default:
-            return NSLocalizedString("\(self.rawValue): \(self.description)", comment: "HTTP status code")
-        }
-    }
+//extension HttpStatus: LocalizedError {
+//    public var errorDescription: String? {
+//        switch self {
+//        case .badJSON:
+//            return NSLocalizedString("The data from the server came back in a way we couldn't use", comment: "")
+//        default:
+//            return NSLocalizedString("\(self.rawValue): \(self.description)", comment: "HTTP status code")
+//        }
+//    }
+//}
+
+
+
+public struct SSError: Error {
+    public var code: SSErrorCode
+    public var requestUrl: String?
+    public var message: String?
 }

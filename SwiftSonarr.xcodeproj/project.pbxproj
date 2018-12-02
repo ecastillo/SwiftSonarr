@@ -22,6 +22,7 @@
 		07AC2F9F21A2141500138D75 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F9E21A2141500138D75 /* Series.swift */; };
 		07AC2FA121A2142600138D75 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2FA021A2142600138D75 /* Episode.swift */; };
 		07E4616B21A33CA500EB87F5 /* JSON+DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */; };
+		07E4622021A8F71400EB87F5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4621F21A8F71400EB87F5 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		07AC2F9E21A2141500138D75 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		07AC2FA021A2142600138D75 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+DateFormats.swift"; sourceTree = "<group>"; };
+		07E4621F21A8F71400EB87F5 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				07AC2F872198F31700138D75 /* SystemStatus.swift */,
 				07AC2F962198F90E00138D75 /* Tag.swift */,
+				07E4621F21A8F71400EB87F5 /* Queue.swift */,
 				07AC2F9E21A2141500138D75 /* Series.swift */,
 				07AC2FA021A2142600138D75 /* Episode.swift */,
 				07AC2F9C21A2133100138D75 /* WantedMissing.swift */,
@@ -253,6 +256,7 @@
 				07AC2F882198F31700138D75 /* SystemStatus.swift in Sources */,
 				07AC2F8E2198F37A00138D75 /* Result.swift in Sources */,
 				07AC2F9A219BC0C800138D75 /* Sonarr.swift in Sources */,
+				07E4622021A8F71400EB87F5 /* Queue.swift in Sources */,
 				07AC2F8A2198F33600138D75 /* HttpMethod.swift in Sources */,
 				07AC2F9F21A2141500138D75 /* Series.swift in Sources */,
 				07AC2FA121A2142600138D75 /* Episode.swift in Sources */,

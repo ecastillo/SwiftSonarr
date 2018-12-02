@@ -39,14 +39,14 @@ public struct Sonarr {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .sonarr
         guard let decodedJson = try? jsonDecoder.decode(expectedResultType, from: data as! Data) else {
-            let error = HttpStatus.badJSON
+            let error = SSError(code: SSErrorCode.badJSON, requestUrl: nil, message: nil)
             handleFailedAPICall(for: error, completionHandler: completionHandler)
             return
         }
         completionHandler(Result.success(decodedJson))
     }
     
-    static func handleFailedAPICall(for error: Error, completionHandler: (Result<Any>) -> Void) {
+    static func handleFailedAPICall(for error: SSError, completionHandler: (Result<Any>) -> Void) {
         completionHandler(Result.failure(error))
     }
 }
