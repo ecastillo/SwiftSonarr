@@ -22,7 +22,7 @@ public struct Series: Codable {
     //public let previousAiring: Date?      Doesn't exist???
     public let network: String?
     // TODO: Custom decode/encode for TimeInterval
-    public let airTime: TimeInterval?
+    //public let airTime: TimeInterval?
     public let images: [Image]?
     public let seasons: [Season]?
     public let year: Int?

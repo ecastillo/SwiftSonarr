@@ -10,7 +10,7 @@
 		07AC2F752198A22300138D75 /* SwiftSonarr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AC2F6B2198A22300138D75 /* SwiftSonarr.framework */; };
 		07AC2F7A2198A22300138D75 /* SwiftSonarrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F792198A22300138D75 /* SwiftSonarrTests.swift */; };
 		07AC2F7C2198A22300138D75 /* SwiftSonarr.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AC2F6E2198A22300138D75 /* SwiftSonarr.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07AC2F862198F2B800138D75 /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F852198F2B800138D75 /* HttpStatus.swift */; };
+		07AC2F862198F2B800138D75 /* SSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F852198F2B800138D75 /* SSError.swift */; };
 		07AC2F882198F31700138D75 /* SystemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F872198F31700138D75 /* SystemStatus.swift */; };
 		07AC2F8A2198F33600138D75 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F892198F33600138D75 /* HttpMethod.swift */; };
 		07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */; };
@@ -42,7 +42,7 @@
 		07AC2F742198A22300138D75 /* SwiftSonarrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSonarrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC2F792198A22300138D75 /* SwiftSonarrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSonarrTests.swift; sourceTree = "<group>"; };
 		07AC2F7B2198A22300138D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07AC2F852198F2B800138D75 /* HttpStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
+		07AC2F852198F2B800138D75 /* SSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSError.swift; sourceTree = "<group>"; };
 		07AC2F872198F31700138D75 /* SystemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemStatus.swift; sourceTree = "<group>"; };
 		07AC2F892198F33600138D75 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonarrEndpoint.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				07AC2F6E2198A22300138D75 /* SwiftSonarr.h */,
 				07AC2F6F2198A22300138D75 /* Info.plist */,
 				07AC2F99219BC0C800138D75 /* Sonarr.swift */,
-				07AC2F852198F2B800138D75 /* HttpStatus.swift */,
+				07AC2F852198F2B800138D75 /* SSError.swift */,
 				07AC2F892198F33600138D75 /* HttpMethod.swift */,
 				07AC2F8B2198F35B00138D75 /* SonarrEndpoint.swift */,
 				07AC2F8F2198F3B200138D75 /* SonarrClient.swift */,
@@ -262,7 +262,7 @@
 				07AC2FA121A2142600138D75 /* Episode.swift in Sources */,
 				07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */,
 				07AC2F972198F90E00138D75 /* Tag.swift in Sources */,
-				07AC2F862198F2B800138D75 /* HttpStatus.swift in Sources */,
+				07AC2F862198F2B800138D75 /* SSError.swift in Sources */,
 				07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */,
 				07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  HttpStatus.swift
+//  SSError.swift
 //  SwiftSonarr
 //
 //  Created by Eric Castillo on 11/11/18.
