@@ -21,6 +21,7 @@
 		07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F9C21A2133100138D75 /* WantedMissing.swift */; };
 		07AC2F9F21A2141500138D75 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F9E21A2141500138D75 /* Series.swift */; };
 		07AC2FA121A2142600138D75 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2FA021A2142600138D75 /* Episode.swift */; };
+		07C0DF3621D59B8B004C9C4F /* Diskspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DF3521D59B8B004C9C4F /* Diskspace.swift */; };
 		07E4616B21A33CA500EB87F5 /* JSON+DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */; };
 		07E4622021A8F71400EB87F5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4621F21A8F71400EB87F5 /* Queue.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		07AC2F9C21A2133100138D75 /* WantedMissing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedMissing.swift; sourceTree = "<group>"; };
 		07AC2F9E21A2141500138D75 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		07AC2FA021A2142600138D75 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		07C0DF3521D59B8B004C9C4F /* Diskspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diskspace.swift; sourceTree = "<group>"; };
 		07E4616A21A33CA500EB87F5 /* JSON+DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+DateFormats.swift"; sourceTree = "<group>"; };
 		07E4621F21A8F71400EB87F5 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				07AC2F872198F31700138D75 /* SystemStatus.swift */,
+				07C0DF3521D59B8B004C9C4F /* Diskspace.swift */,
 				07AC2F962198F90E00138D75 /* Tag.swift */,
 				07E4621F21A8F71400EB87F5 /* Queue.swift */,
 				07AC2F9E21A2141500138D75 /* Series.swift */,
@@ -265,6 +268,7 @@
 				07AC2F862198F2B800138D75 /* SSError.swift in Sources */,
 				07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */,
 				07AC2F8C2198F35B00138D75 /* SonarrEndpoint.swift in Sources */,
+				07C0DF3621D59B8B004C9C4F /* Diskspace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

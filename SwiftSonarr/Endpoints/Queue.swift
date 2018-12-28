@@ -15,7 +15,8 @@ public struct QueueItem: Codable {
     public var size: Int?
     public var title: String?
     public var sizeleft: Int?
-    //public var timeleft: TimeInterval?
+    var _timeleft: String?
+    public var timeleft: TimeInterval?
     public var estimatedCompletionTime: Date?
     public var status: String?
     public var trackedDownloadStatus: String?
@@ -26,9 +27,45 @@ public struct QueueItem: Codable {
     
     enum CodingKeys: String, CodingKey {
         case itemProtocol = "protocol"
+        case _timeleft = "timeleft"
         
         case series, episode, size, title, sizeleft, estimatedCompletionTime, status, trackedDownloadStatus, downloadId, id
     }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        series = try values.decode(Series.self, forKey: .series)
+        episode = try values.decode(Episode.self, forKey: .episode)
+        size = try values.decode(Int.self, forKey: .size)
+        title = try values.decode(String.self, forKey: .title)
+        sizeleft = try values.decode(Int.self, forKey: .sizeleft)
+        _timeleft = try values.decode(String.self, forKey: ._timeleft)
+        estimatedCompletionTime = try values.decode(Date.self, forKey: .estimatedCompletionTime)
+        status = try values.decode(String.self, forKey: .status)
+        trackedDownloadStatus = try values.decode(String.self, forKey: .trackedDownloadStatus)
+        downloadId = try values.decode(String.self, forKey: .downloadId)
+        itemProtocol = try values.decode(String.self, forKey: .itemProtocol)
+        id = try values.decode(Int.self, forKey: .id)
+        
+        if let _timeleft = _timeleft {
+            timeleft = parseDuration(_timeleft)
+        }
+    }
+}
+
+func parseDuration(_ timeString:String) -> TimeInterval {
+    guard !timeString.isEmpty else {
+        return 0
+    }
+    
+    var interval: Double = 0
+    
+    let parts = timeString.components(separatedBy: ":")
+    for (index, part) in parts.reversed().enumerated() {
+        interval += (Double(part) ?? 0) * pow(Double(60), Double(index))
+    }
+    
+    return interval
 }
 
 /// Models the Queue endpoint from the Sonarr API.
@@ -42,7 +79,7 @@ enum QueueEndpoint: SonarrEndpoint {
     func provideValues() -> (path: String, httpMethod: HTTPMethod, parameters:[String:Any]?) {
         switch self {
         case .queue():
-            return (path: "/queuez", httpMethod: .get, parameters: nil)
+            return (path: "/queue", httpMethod: .get, parameters: nil)
         case .deleteFromQueue(let itemId, let blacklist):
             let params = parameters(for: itemId, blacklist: blacklist)
             return (path: "/queue/\(itemId)", httpMethod: .delete, parameters: params)

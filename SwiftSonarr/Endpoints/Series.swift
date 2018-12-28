@@ -19,11 +19,12 @@ public struct Series: Codable {
     public let sizeOnDisk: Int?
     public let status: String?
     public let overview: String?
+    public let nextAiring: Date?
     //public let previousAiring: Date?      Doesn't exist???
     public let network: String?
     // TODO: Custom decode/encode for TimeInterval
     //public let airTime: TimeInterval?
-    public let images: [Image]?
+    public let images: [SeriesImage]?
     public let seasons: [Season]?
     public let year: Int?
     public let path: String?
@@ -48,42 +49,48 @@ public struct Series: Codable {
     public let ratings: Rating?
     public let qualityProfileId: Int?
     public let id: Int?
-    
-    public struct AlternativeTitle: Codable {
-        public var title: String?
-        public var seasonNumber: Int?
-    }
-    
-    public struct Image: Codable {
-        public var coverType: String?
-        public var url: String?
-    }
-    
-    public struct Season: Codable {
-        public var seasonNumber: Int?
-        public var monitored: Bool?
-        public var statistics: Statistic?
-    }
-    
-    public struct Statistic: Codable {
-        public var previousAiring: Date?
-        public var episodeFileCount: Int?
-        public var episodeCount: Int?
-        public var totalEpisodeCount: Int?
-        public var sizeOnDisk: Int?
-        public var percentOfEpisodes: Int?
-    }
-    
-    public enum SeriesType: String, Codable {
-        case standard = "standard"
-        case daily = "daily"
-        case anime = "anime"
-    }
-    
-    public struct Rating: Codable {
-        public var votes: Int?
-        public var value: Double?
-    }
+}
+
+public struct AlternativeTitle: Codable {
+    public var title: String?
+    public var seasonNumber: Int?
+}
+
+public struct SeriesImage: Codable {
+    public var coverType: CoverType?
+    public var url: String?
+}
+
+public enum CoverType: String, Codable {
+    case fanart = "fanart"
+    case banner = "banner"
+    case poster = "poster"
+}
+
+public struct Season: Codable {
+    public var seasonNumber: Int?
+    public var monitored: Bool?
+    public var statistics: Statistic?
+}
+
+public struct Statistic: Codable {
+    public var previousAiring: Date?
+    public var episodeFileCount: Int?
+    public var episodeCount: Int?
+    public var totalEpisodeCount: Int?
+    public var sizeOnDisk: Int?
+    public var percentOfEpisodes: Int?
+}
+
+public enum SeriesType: String, Codable {
+    case standard = "standard"
+    case daily = "daily"
+    case anime = "anime"
+}
+
+public struct Rating: Codable {
+    public var votes: Int?
+    public var value: Double?
 }
 
 
