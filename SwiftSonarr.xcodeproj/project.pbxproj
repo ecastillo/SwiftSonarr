@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0760493721E15CE4007631AF /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0760493621E15CE4007631AF /* History.swift */; };
 		07AC2F752198A22300138D75 /* SwiftSonarr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AC2F6B2198A22300138D75 /* SwiftSonarr.framework */; };
 		07AC2F7A2198A22300138D75 /* SwiftSonarrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC2F792198A22300138D75 /* SwiftSonarrTests.swift */; };
 		07AC2F7C2198A22300138D75 /* SwiftSonarr.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AC2F6E2198A22300138D75 /* SwiftSonarr.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0760493621E15CE4007631AF /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		07AC2F6B2198A22300138D75 /* SwiftSonarr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSonarr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC2F6E2198A22300138D75 /* SwiftSonarr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftSonarr.h; sourceTree = "<group>"; };
 		07AC2F6F2198A22300138D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				07C0DF3521D59B8B004C9C4F /* Diskspace.swift */,
 				07AC2F962198F90E00138D75 /* Tag.swift */,
 				07E4621F21A8F71400EB87F5 /* Queue.swift */,
+				0760493621E15CE4007631AF /* History.swift */,
 				07AC2F9E21A2141500138D75 /* Series.swift */,
 				07AC2FA021A2142600138D75 /* Episode.swift */,
 				07AC2F9C21A2133100138D75 /* WantedMissing.swift */,
@@ -264,6 +267,7 @@
 				07AC2F9F21A2141500138D75 /* Series.swift in Sources */,
 				07AC2FA121A2142600138D75 /* Episode.swift in Sources */,
 				07AC2F902198F3B200138D75 /* SonarrClient.swift in Sources */,
+				0760493721E15CE4007631AF /* History.swift in Sources */,
 				07AC2F972198F90E00138D75 /* Tag.swift in Sources */,
 				07AC2F862198F2B800138D75 /* SSError.swift in Sources */,
 				07AC2F9D21A2133100138D75 /* WantedMissing.swift in Sources */,

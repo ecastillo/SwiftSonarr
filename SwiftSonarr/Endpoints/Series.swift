@@ -12,15 +12,11 @@ public struct Series: Codable {
     public var title: String?
     public var alternateTitles: [AlternativeTitle]?
     public var sortTitle: String?
-    public var seasonCount: Int?
-    public var totalEpisodeCount: Int?
-    public let episodeCount: Int?
-    public let episodeFileCount: Int?
-    public let sizeOnDisk: Int?
     public let status: String?
+    public let ended: Bool?
     public let overview: String?
     public let nextAiring: Date?
-    //public let previousAiring: Date?      Doesn't exist???
+    public let previousAiring: Date?
     public let network: String?
     // TODO: Custom decode/encode for TimeInterval
     //public let airTime: TimeInterval?
@@ -28,7 +24,8 @@ public struct Series: Codable {
     public let seasons: [Season]?
     public let year: Int?
     public let path: String?
-    public let profileId: Int?
+    public let qualityProfileId: Int?
+    public let languageProfileId: Int?
     public let seasonFolder: Bool?
     public let monitored: Bool?
     public let useSceneNumbering: Bool?
@@ -42,12 +39,13 @@ public struct Series: Codable {
     public let cleanTitle: String?
     public let imdbId: String?
     public let titleSlug: String?
+    public let rootFolderPath: String?
     public let certification: String?
     public let genres: [String]?
     public let tags: [Int]?
     public let added: Date?
     public let ratings: Rating?
-    public let qualityProfileId: Int?
+    public let statistics: SeriesStatistics?
     public let id: Int?
 }
 
@@ -67,19 +65,28 @@ public enum CoverType: String, Codable {
     case poster = "poster"
 }
 
+public struct SeriesStatistics: Codable {
+    public var seasonCount: Int?
+    public let episodeFileCount: Int?
+    public let episodeCount: Int?
+    public var totalEpisodeCount: Int?
+    public let sizeOnDisk: Int?
+    public var percentOfEpisodes: Float?
+}
+
 public struct Season: Codable {
     public var seasonNumber: Int?
     public var monitored: Bool?
-    public var statistics: Statistic?
+    public var statistics: SeasonStatistics?
 }
 
-public struct Statistic: Codable {
-    public var previousAiring: Date?
-    public var episodeFileCount: Int?
-    public var episodeCount: Int?
+public struct SeasonStatistics: Codable {
+    public let nextAiring: Date?
+    public let episodeFileCount: Int?
+    public let episodeCount: Int?
     public var totalEpisodeCount: Int?
-    public var sizeOnDisk: Int?
-    public var percentOfEpisodes: Int?
+    public let sizeOnDisk: Int?
+    public var percentOfEpisodes: Float?
 }
 
 public enum SeriesType: String, Codable {

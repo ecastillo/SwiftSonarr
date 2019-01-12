@@ -24,6 +24,7 @@ public struct WantedMissing: Codable {
     public enum SortDirection: String, Codable {
         case ascending = "ascending"
         case descending = "descending"
+        case ddd = "default"
     }
     
     public struct Options: Codable {
@@ -48,7 +49,9 @@ enum WantedMissingEndpoint: SonarrEndpoint {
     func provideValues() -> (path: String, httpMethod: HTTPMethod, parameters:[String:Any]?) {
         switch self {
         case .wantedMissing(let options):
-            let params = parameters(options: options)
+            var no = WantedMissing.Options()
+            no.sortKey = .seriesTitle
+            let params = parameters(options: no)
             return (path: "/wanted/missing", httpMethod: .get, parameters: params)
         }
     }

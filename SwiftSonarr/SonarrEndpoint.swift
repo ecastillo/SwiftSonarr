@@ -21,7 +21,7 @@ protocol SonarrEndpoint {
 
 extension SonarrEndpoint {
     
-    var url: String                 { return apiHost + "/api" + provideValues().path }
+    var url: String                 { return apiHost + "/api/v3" + provideValues().path }
     var httpMethod: HTTPMethod      { return provideValues().httpMethod }
     var parameters: [String: Any]?  { return provideValues().parameters }
 }
